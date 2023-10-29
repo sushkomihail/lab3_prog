@@ -48,8 +48,8 @@ public class Advertisement {
     }
 
     public void create(User user, List<Advertisement> advertisements) {
-        Car car = new Car();
-        Report report = new Report();
+        car = new Car();
+        report = new Report();
 
         car.create();
         report.create();
