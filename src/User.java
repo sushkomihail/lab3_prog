@@ -1,0 +1,79 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class User {
+    private String login;
+    private String password;
+    private String phoneNumber;
+    List<Advertisement> favourites = new ArrayList<>();
+
+    public User(String login, String password, String phoneNumber) {
+        this.login = login;
+        this.password = password;
+        this.phoneNumber = phoneNumber;
+    }
+
+    public User(String login) {
+        this.login = login;
+    }
+
+    public User() {
+
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public List<Advertisement> getFavourites() {
+        return favourites;
+    }
+
+    public void inputLogin() {
+        System.out.print("Введите логин: ");
+        login = Extensions.scanner().next();
+    }
+
+    public void inputPassword() {
+        System.out.print("Введите пароль: ");
+        password = Extensions.scanner().next();
+    }
+
+    public void inputPhoneNumber() {
+        do {
+            System.out.print("Введите номер телефона: ");
+            phoneNumber = Extensions.scanner().next();
+        } while (!Extensions.isNumber(phoneNumber));
+    }
+
+    public void create(List<User> userList) {
+        System.out.print("----- Регистрация -----\n\n");
+
+        inputLogin();
+        inputPassword();
+        inputPhoneNumber();
+
+        userList.add(this);
+    }
+
+    public void addToFavourites(Advertisement advertisement) {
+        favourites.add(advertisement);
+        System.out.println("Объявление (id = " + advertisement.getId() + ") добавлено в избранное!");
+    }
+
+    public void printData() {
+        System.out.println("----- Данные пользователя -----");
+        System.out.println("Логин: " + login);
+        System.out.println("Номер телефона: " + phoneNumber);
+        System.out.println("Избранные объявления:");
+        Extensions.printAdvertisements(favourites);
+    }
+}
