@@ -21,10 +21,16 @@ public class Advertisement {
 
     public Advertisement(Car car) {
         assignId();
+        this.car = car;
+        this.report = new Report();
+        this.seller = new User();
     }
 
     public Advertisement() {
         assignId();
+        this.car = new Car();
+        this.report = new Report();
+        this.seller = new User();
     }
 
     public int getId() {
