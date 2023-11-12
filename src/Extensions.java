@@ -1,5 +1,4 @@
 import java.util.List;
-import java.util.Objects;
 import java.util.Scanner;
 
 public class Extensions {
@@ -47,8 +46,8 @@ public class Extensions {
         enteredUser.inputPassword();
 
         for (User createdUser : users) {
-            if (Objects.equals(createdUser.getLogin(), enteredUser.getLogin()) &&
-                    Objects.equals(createdUser.getPassword(), enteredUser.getPassword())) {
+            if (createdUser.getLogin().equals(enteredUser.getLogin()) &&
+                    createdUser.getPassword().equals(enteredUser.getPassword())) {
                 user = createdUser;
                 return true;
             }

@@ -21,7 +21,23 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        StaticField();
-        StaticVoid();
+//        StaticField();
+//        StaticVoid();
+
+//        User user = new User("mihail");
+//        List<Advertisement> list = new ArrayList<>();
+//        Advertisement adv = new Advertisement();
+//        adv.create(user, list);
+//        System.out.println("\nКоличество объявлений: " + list.size());
+
+        List<User> users = new ArrayList<>();
+        users.add(new User("mihail", "12345", "88005553535"));
+        User user = new User();
+        if (Extensions.enterToSystem(users, user)){
+            System.out.println("Вход выполнен");
+        }
+        else {
+            System.out.println("Неверный логин или пароль!");
+        }
     }
 }

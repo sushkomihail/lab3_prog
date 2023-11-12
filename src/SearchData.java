@@ -38,10 +38,10 @@ public class SearchData {
         int counter = 0;
 
         for (Advertisement advertisement : list) {
-            counter += compareData(Objects.equals(advertisement.getCar().getBrand(), brand) || Objects.equals(brand, ""));
+            counter += compareData(advertisement.getCar().getBrand().equals(brand) || brand.equals(""));
             counter += compareData(advertisement.getCar().getYear() == year || year == -1);
             counter += compareData(advertisement.getPrice() <= price || price == -1);
-            counter += compareData(Objects.equals(advertisement.getLocation(), location) || Objects.equals(location, ""));
+            counter += compareData(advertisement.getLocation().equals(location) || location.equals(""));
 
             if (counter == COMPARES_TARGET) {
                 newList.add(advertisement);
