@@ -53,6 +53,10 @@ public class Advertisement {
         return seller;
     }
 
+    public static int getCount(){
+        return id;
+    }
+
     public void create(User user, List<Advertisement> advertisements) {
         car = new Car();
         report = new Report();
