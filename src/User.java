@@ -69,11 +69,17 @@ public class User {
         System.out.println("Объявление (id = " + advertisement.getId() + ") добавлено в избранное!");
     }
 
-    public void printData() {
+    public void printData() throws Exception {
         System.out.println("----- Данные пользователя -----");
         System.out.println("Логин: " + login);
         System.out.println("Номер телефона: " + phoneNumber);
         System.out.println("Избранные объявления:");
-        Extensions.printAdvertisements(favourites);
+
+        try{
+            Extensions.printAdvertisements(favourites);
+        }
+        catch(Exception exception) {
+            System.out.println(exception.getMessage());
+        }
     }
 }

@@ -9,7 +9,7 @@ public class Main {
                 new Advertisement(new Car("subaru"))
         };
 
-        System.out.println("----- Пример работы со статическим полем -----");
+        System.out.println("----- Одномерный массив -----");
         for (Advertisement adv : advs) {
             System.out.println("Объявление(" + adv.getCar().getBrand() + "); id - " + adv.getId());
         }
@@ -25,30 +25,39 @@ public class Main {
         c.value = 5;
     }
 
-    public static void main(String[] args) {
-//        staticField();
-//        staticVoid();
+    private static void twoDimensionalArray(){
+        Car[][] cars = {
+                { new Car("toyota"), new Car("mazda") },
+                { new Car("nissan"), new Car("honda") }
+        };
 
-//        User user = new User("mihail");
-//        List<Advertisement> list = new ArrayList<>();
-//        Advertisement adv = new Advertisement();
-//        adv.create(user, list);
-//        System.out.println("\nКоличество объявлений: " + list.size());
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                System.out.print(cars[i][j].getBrand() + "\t");
+            }
+            System.out.println();
+        }
 
-//        List<User> users = new ArrayList<>();
-//        users.add(new User("mihail", "12345", "88005553535"));
-//        User user = new User();
-//        if (Extensions.enterToSystem(users, user)){
-//            System.out.println("Вход выполнен");
-//        }
-//        else {
-//            System.out.println("Неверный логин или пароль!");
-//        }
+        System.out.print("\nЭлеметы главной диагонали: ");
 
-        SupportiveClass c = new SupportiveClass();
-        c.value = 1;
-        System.out.println("value = " + c.value);
-        function(c);
-        System.out.println("value = " + c.value);
+        for (int i = 0; i < 2; i++) {
+            System.out.print(cars[i][i].getBrand() + "  ");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) throws Exception {
+//        System.out.println("Try-catch:");
+//        User user = new User("mihail", "12345", "90394534");
+//        user.printData();
+//        System.out.println();
+//        user.addToFavourites(new Advertisement(new Car("honda")));
+//        System.out.println();
+//        user.printData();
+
+        staticField();
+
+        System.out.println("\n----- Двумерный массив -----");
+        twoDimensionalArray();
     }
 }

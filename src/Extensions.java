@@ -56,7 +56,11 @@ public class Extensions {
         return false;
     }
 
-    public static void printAdvertisements(List<Advertisement> advertisements) {
+    public static void printAdvertisements(List<Advertisement> advertisements) throws Exception {
+        if (advertisements.size() == 0) {
+            throw new Exception("Объявлений нет!");
+        }
+
         for (Advertisement advertisement : advertisements) {
             advertisement.printData();
         }
