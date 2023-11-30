@@ -1,4 +1,4 @@
-public class Car implements AdvertisementPart {
+public class Car implements AdvertisementPart, Cloneable {
     protected String brand;
     protected int year;
     protected int enginePower;
@@ -47,5 +47,14 @@ public class Car implements AdvertisementPart {
                 "Мощность двигателя: " + enginePower + "\n" +
                 "КПП: " + transmission + "\n" +
                 "Пробег: " + mileage;
+    }
+
+    @Override
+    public Car clone() {
+        try {
+            return (Car) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
     }
 }

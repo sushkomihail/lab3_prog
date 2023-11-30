@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class User {
+public class User implements Cloneable {
     private String login;
     private String password;
     private String phoneNumber;
@@ -75,5 +75,14 @@ public class User {
                 "Логин: " + login + "\n" +
                 "Номер телефона: " + phoneNumber + "\n" +
                 "Избранные объявления:";
+    }
+
+    @Override
+    public User clone() {
+        try {
+            return (User) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
     }
 }

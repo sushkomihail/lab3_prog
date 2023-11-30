@@ -1,4 +1,4 @@
-public class Report implements AdvertisementPart {
+public class Report implements AdvertisementPart, Cloneable {
     private int crashesCount;
     private boolean isListedAsWanted;
     private boolean areDocumentsInOrder;
@@ -37,5 +37,14 @@ public class Report implements AdvertisementPart {
                 wanted + "\n" +
                 documents + "\n" +
                 registration;
+    }
+
+    @Override
+    public Report clone() {
+        try {
+            return (Report) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
     }
 }

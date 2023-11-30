@@ -1,7 +1,7 @@
 import java.util.List;
 import java.util.Objects;
 
-public class Advertisement {
+public class Advertisement implements Cloneable {
     private static int id;
     private int currentId;
     private Car car;
@@ -101,5 +101,21 @@ public class Advertisement {
 
     private void assignId() {
         currentId = id++;
+    }
+
+    @Override
+    public Advertisement clone() {
+        try {
+            Advertisement newAdvertisement = (Advertisement) super.clone();
+            Car newCar = car.clone();
+            Report newReport = report.clone();
+            User newSeller = seller.clone();
+            newAdvertisement.car = newCar;
+            newAdvertisement.report = newReport;
+            newAdvertisement.seller = newSeller;
+            return newAdvertisement;
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
     }
 }
