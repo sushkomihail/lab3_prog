@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class SearchData {
+public class SearchData implements AdvertisementPart {
     private final int COMPARES_TARGET = 4;
     private String brand;
     private int year;

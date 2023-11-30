@@ -1,4 +1,4 @@
-public class Car {
+public class Car implements AdvertisementPart {
     protected String brand;
     protected int year;
     protected int enginePower;

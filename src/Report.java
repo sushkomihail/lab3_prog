@@ -1,4 +1,4 @@
-public class Report {
+public class Report implements AdvertisementPart {
     private int crashesCount;
     private boolean isListedAsWanted;
     private boolean areDocumentsInOrder;
