@@ -58,11 +58,11 @@ public class Extensions {
 
     public static void printAdvertisements(List<Advertisement> advertisements) throws Exception {
         if (advertisements.size() == 0) {
-            throw new Exception("Объявлений нет!");
+            System.out.println("Объявлений нет!");
         }
 
         for (Advertisement advertisement : advertisements) {
-            advertisement.printData();
+            System.out.println(advertisement.toString());
         }
     }
 }

@@ -90,14 +90,13 @@ public class Advertisement {
         System.out.println("Данного объявления нет в списке!");
     }
 
-    public void printData() {
-        System.out.print("---------- Объявление (" + location + ") ----------\n\n");
-        car.printData();
-        System.out.print("\n");
-        report.printData();
-        System.out.print("\n");
-        System.out.print("Цена: " + price + "\n\n");
-        System.out.println("Телефон продавца: " + seller.getPhoneNumber());
+    @Override
+    public String toString(){
+        return "---------- Объявление (" + location + ") ----------\n\n" +
+                car.toString() + "\n" +
+                report.toString() + "\n" +
+                "Цена: " + price + "\n\n" +
+                "Телефон продавца: " + seller.getPhoneNumber();
     }
 
     private void assignId() {

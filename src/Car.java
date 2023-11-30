@@ -39,12 +39,13 @@ public class Car {
         mileage = Extensions.inputIntField("Пробег: ");
     }
 
-    public void printData() {
-        System.out.println("<<< Данные об автомобиле >>>");
-        System.out.println("Марка: " + brand);
-        System.out.println("Год производства: " + year);
-        System.out.println("Мощность двигателя: " + enginePower);
-        System.out.println("КПП: " + transmission);
-        System.out.println("Пробег: " + mileage);
+    @Override
+    public String toString(){
+        return "<<< Данные об автомобиле >>>" + "\n" +
+                "Марка: " + brand + "\n" +
+                "Год производства: " + year + "\n" +
+                "Мощность двигателя: " + enginePower + "\n" +
+                "КПП: " + transmission + "\n" +
+                "Пробег: " + mileage;
     }
 }

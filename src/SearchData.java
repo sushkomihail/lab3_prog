@@ -53,17 +53,18 @@ public class SearchData {
         return newList;
     }
 
-    public void printData() {
+    @Override
+    public String toString(){
         String brand = Objects.equals(this.brand, "") ? "Все" : this.brand;
         String year = this.year == -1 ? "Все" : Integer.toString(this.year);
         String price = this.price == -1 ? "Все" : Integer.toString(this.price);
         String location = Objects.equals(this.location, "") ? "Все" : this.location;
 
-        System.out.print("----- Параметры поиска -----\n\n");
-        System.out.println("Марка: " + brand);
-        System.out.println("Год: " + year);
-        System.out.println("Максимальная цена: " + price);
-        System.out.println("Местоположение: " + location);
+        return "----- Параметры поиска -----\n\n" +
+                "Марка: " + brand + "\n" +
+                "Год: " + year + "\n" +
+                "Максимальная цена: " + price + "\n" +
+                "Местоположение: " + location;
     }
 
     private int compareData(boolean expression) {

@@ -26,14 +26,16 @@ public class Report {
         isRegistered = Extensions.inputBoolField("Зарегистрирована?(1-да, 0-нет): ");
     }
 
-    public void printData() {
-        System.out.println("<<< Отчет по автомобилю >>>");
-        System.out.println("Количество аварий: " + crashesCount);
+    @Override
+    public String toString(){
         String wanted = isListedAsWanted ? "Находится в розыске" : "Не находится в розыске";
-        System.out.println(wanted);
         String documents = areDocumentsInOrder ? "Документы в порядке" : "Документы не в порядке";
-        System.out.println(documents);
         String registration = isRegistered ? "Зарегистрирована" : "Не зарегистрирована";
-        System.out.println(registration);
+
+        return "<<< Отчет по автомобилю >>>\n" +
+                "Количество аварий: " + crashesCount + "\n" +
+                wanted + "\n" +
+                documents + "\n" +
+                registration;
     }
 }

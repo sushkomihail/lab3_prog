@@ -13,8 +13,8 @@ public class Truck extends Car {
     }
 
     @Override
-    public void printData(){
-        System.out.println("Марка: " + brand);
-        System.out.println("Грузоподъемность: " + loadCapacity);
+    public String toString(){
+        return "Марка: " + brand + "\n" +
+                "Грузоподъемность: " + loadCapacity;
     }
 }

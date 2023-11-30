@@ -47,17 +47,7 @@ public class Main {
     }
 
     public static void main(String[] args) throws Exception {
-//        System.out.println("Try-catch:");
-//        User user = new User("mihail", "12345", "90394534");
-//        user.printData();
-//        System.out.println();
-//        user.addToFavourites(new Advertisement(new Car("honda")));
-//        System.out.println();
-//        user.printData();
-
-        staticField();
-
-        System.out.println("\n----- Двумерный массив -----");
-        twoDimensionalArray();
+        Advertisement adv = new Advertisement();
+        System.out.println(adv.toString());
     }
 }
