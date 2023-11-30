@@ -1,9 +1,9 @@
 public class Car {
-    private String brand;
-    private int year;
-    private int enginePower;
-    private String transmission;
-    private int mileage;
+    protected String brand;
+    protected int year;
+    protected int enginePower;
+    protected String transmission;
+    protected int mileage;
 
     public Car(String brand, int year, int enginePower, String transmission, int mileage) {
         this.brand = brand;
