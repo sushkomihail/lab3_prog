@@ -29,6 +29,8 @@ public class Car implements AdvertisementPart, Cloneable {
         return year;
     }
 
+    public int getMileage() { return mileage; }
+
     public void create() {
         System.out.print("Марка: ");
         brand = Extensions.scanner().nextLine();
