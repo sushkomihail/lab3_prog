@@ -1,6 +1,10 @@
 public class ExtensiveSearchData extends SearchData{
     private int mileage;
 
+    public ExtensiveSearchData(){
+        comparesTarget = 5;
+    }
+
     @Override
     public void create() {
         System.out.print("----- Фильтр -----\n\n");
