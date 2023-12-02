@@ -18,6 +18,9 @@ public class SaveSystem<T> {
     public T Load() throws IOException, ClassNotFoundException {
         FileInputStream file = new FileInputStream(dataFile);
         ObjectInputStream ois = new ObjectInputStream(file);
-        return (T) ois.readObject();
+        T object = (T) ois.readObject();
+        ois.close();
+        file.close();
+        return object;
     }
 }
