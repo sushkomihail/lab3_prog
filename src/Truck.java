@@ -6,6 +6,14 @@ public class Truck extends Car {
         this.loadCapacity = loadCapacity;
     }
 
+    public Truck(String brand){
+        super(brand);
+    }
+
+    public Truck(){
+
+    }
+
     @Override
     public void create(){
         super.create();
