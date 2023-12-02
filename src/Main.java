@@ -47,7 +47,9 @@ public class Main {
     }
 
     public static void main(String[] args) throws Exception {
-        Advertisement adv = new Advertisement();
-        System.out.println(adv.toString());
+        User user = new User("mihail", "12345m", "89006453785");
+        SaveSystem<User> saveSystem = new SaveSystem<>("data.txt");
+        //saveSystem.Save(user);
+        System.out.println(saveSystem.Load().getLogin());
     }
 }
