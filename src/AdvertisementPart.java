@@ -1,3 +1,3 @@
 public interface AdvertisementPart {
-    public void create();
+    void create();
 }

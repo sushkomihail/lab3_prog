@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class ExtensiveSearchData extends SearchData{
     private int mileage;
 
@@ -22,5 +24,21 @@ public class ExtensiveSearchData extends SearchData{
                 compareData(advertisement.getPrice() <= price || price == -1) +
                 compareData(advertisement.getLocation().equals(location) || location.equals("")) +
                 compareData(advertisement.getCar().getMileage() == mileage || mileage == -1);
+    }
+
+    @Override
+    public String toString(){
+        String brand = Objects.equals(this.brand, "") ? "Все" : this.brand;
+        String year = this.year == -1 ? "Все" : Integer.toString(this.year);
+        String price = this.price == -1 ? "Все" : Integer.toString(this.price);
+        String location = Objects.equals(this.location, "") ? "Все" : this.location;
+        String mileage = this.mileage == -1 ? "Все" : Integer.toString(this.mileage);
+
+        return "----- Параметры поиска -----\n\n" +
+                "Марка: " + brand + "\n" +
+                "Год: " + year + "\n" +
+                "Максимальная цена: " + price + "\n" +
+                "Местоположение: " + location + "\n" +
+                "Максимальный пробег: " + mileage;
     }
 }
