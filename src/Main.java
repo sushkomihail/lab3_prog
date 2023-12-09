@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Main {
     private static void VirtualVoidTest(){
@@ -39,9 +38,45 @@ public class Main {
         System.out.println(advertisement1.toString());
     }
 
+    private static void SortTest(List<Car> list) {
+        System.out.println("Сортировка по пробегу");
+        list.sort(Comparator.comparing(Car::getMileage));
+
+        for (Car car : list) {
+            System.out.println(car);
+        }
+    }
+
+    private static void FindTest(List<Car> list) {
+        System.out.println("Поиск 'dodge'");
+
+        for (Car car : list) {
+            System.out.println(car);
+        }
+
+
+        Car car = list.stream().filter(c -> Objects.equals(c.getBrand(), "dodge")).findAny().orElse(null);
+        if (car == null) {
+            System.out.println("Не найдено!");
+            return;
+        }
+
+        System.out.println("****** Найдено! индекс: " + list.indexOf(car));
+    }
+
     public static void main(String[] args) throws Exception {
         //VirtualVoidTest();
         //AbstractClassTest();
-        CloneTest();
+        //CloneTest();
+
+        Car[] arr = {
+                new Car("toyota", 1, 1, "m", 1),
+                new Truck("peterbilt", 1, 1, "a", 3, 1),
+                new Car("dodge", 1, 1, "a", 2)
+        };
+        List<Car> list = Arrays.asList(arr);
+        SortTest(list);
+        System.out.println("---------------------");
+        FindTest(list);
     }
 }

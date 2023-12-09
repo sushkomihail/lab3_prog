@@ -22,9 +22,10 @@ public class Truck extends Car {
 
     @Override
     public String toString(){
-        return "<<< Данные об автомобиле >>>\n" +
+        return "<<< Данные о грузовике >>>\n" +
                 "Марка: " + brand + "\n" +
                 "Мощность двигателя: " + enginePower + "\n" +
+                "Пробег: " + mileage + "\n" +
                 "Грузоподъемность: " + loadCapacity;
     }
 }
